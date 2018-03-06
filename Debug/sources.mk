@@ -23,6 +23,8 @@ CPP_DEPS :=
 
 # Every subdirectory with source files must be described here
 SUBDIRS := \
+src/Combat \
 src/Combat/Enemies \
+src/Combat/Weapons \
 src \
 

@@ -16,15 +16,19 @@ private:
 	std::string Race;
 	double Health;
 	int Stats[5];
+	std::string Invintory[20];
 	double UnarmedAtck;
 
 	double UnarmedCalc();
 
 public:
+	Enemy();
 	Enemy(double, int[],std::string);
 	void retStats();
 	double retHealth();
 	int retStat(int);
+	void addItem(std::string);
+	std::string retItem(int);
 	virtual ~Enemy();
 };
 

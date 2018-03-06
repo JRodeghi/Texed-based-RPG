@@ -7,10 +7,9 @@
 //============================================================================
 
 #include <iostream>
-//#include "Combat/Enemies/Bandit.h"
+
 using namespace std;
 
 int main() {
-	//Combat::Bandit();
 	return 0;
 }

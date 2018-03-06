@@ -9,6 +9,7 @@
 #define COMBAT_ENEMIES_BANDIT_H_
 
 #include "Enemy.h"
+#include "../Weapons/Weapon.h"
 #include <iostream>
 
 namespace Combat {
@@ -18,6 +19,7 @@ private:
 	int Stats[5];
 public:
 	Bandit(double,std::string);
+	double Attack();
 	virtual ~Bandit();
 };
 

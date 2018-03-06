@@ -9,6 +9,24 @@
 
 namespace Combat {
 
+Enemy::Enemy(){
+	Health = 0;
+	for(int k = 0;k <= 5;k++)
+	{
+		Stats[k] = 0;
+	}
+
+	Race = "Human";
+
+	UnarmedAtck = UnarmedCalc();
+
+	for(int k = 0; k <= 19; k++)
+	{
+		Invintory[k] = "Empty";
+	}
+
+}
+
 Enemy::Enemy(double h,int s[],std::string r) {
 	// TODO Auto-generated constructor stub
 	Health = h;
@@ -20,6 +38,11 @@ Enemy::Enemy(double h,int s[],std::string r) {
 	Race = r;
 
 	UnarmedAtck = UnarmedCalc();
+
+	for(int k = 0; k <= 19; k++)
+	{
+		Invintory[0] = "Empty";
+	}
 }
 
 void Enemy::retStats() {
@@ -35,6 +58,7 @@ void Enemy::retStats() {
 }
 
 double Enemy::UnarmedCalc() {
+
 	double multi = 0;
 	if(Race == "Human")
 	{
@@ -64,8 +88,26 @@ int Enemy::retStat(int s) {
 	return Stats[s];
 }
 
+void Enemy::addItem(std::string item) {
+	int k = 0;
+	while(Invintory[k] != "Empty")
+	{
+		k++;
+	}
+	if(Invintory[k] == "Empty")
+	{
+		Invintory[k] = item;
+	}
+}
+
+std::string Combat::Enemy::retItem(int a) {
+	return Invintory[a];
+}
+
 Enemy::~Enemy() {
 	// TODO Auto-generated destructor stub
 }
 
 } /* namespace Enemy */
+
+
