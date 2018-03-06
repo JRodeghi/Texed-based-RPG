@@ -9,7 +9,7 @@
 #define COMBAT_ENEMIES_ENEMY_H_
 #include <iostream>
 
-namespace Enemy {
+namespace Combat {
 
 class Enemy {
 private:

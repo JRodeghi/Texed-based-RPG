@@ -7,9 +7,10 @@
 //============================================================================
 
 #include <iostream>
+//#include "Combat/Enemies/Bandit.h"
 using namespace std;
 
 int main() {
-	std::cout << "!!!Hello World!!!" << endl; // prints !!!Hello World!!!
+	//Combat::Bandit();
 	return 0;
 }

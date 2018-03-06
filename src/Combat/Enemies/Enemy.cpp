@@ -7,7 +7,7 @@
 
 #include "Enemy.h"
 
-namespace Enemy {
+namespace Combat {
 
 Enemy::Enemy(double h,int s[],std::string r) {
 	// TODO Auto-generated constructor stub
