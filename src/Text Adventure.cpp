@@ -3,7 +3,7 @@
 // Author      : Joel
 // Version     :
 // Copyright   : Please no steal
-// Description : Hello World in C++, Ansi-style
+// Description : Basic text based game
 //============================================================================
 
 #include <iostream>

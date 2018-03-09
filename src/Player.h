@@ -15,6 +15,7 @@ namespace Player {
 
 class Player {
 private:
+	std::string Name;
 	std::string Race;
 	double Health;
 	int Stats[5];
@@ -24,7 +25,8 @@ private:
 
 	double UnarmedCalc();
 public:
-	Player();
+	Player(std::string,std::string);
+	std::string retName();
 	void retStats();
 	double retHealth();
 	int retStat(int);

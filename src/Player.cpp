@@ -7,10 +7,33 @@
 
 #include "Player.h"
 
+using namespace Item;
+
 namespace Player {
 
-Player::Player() {
+Player::Player(std::string n,std::string r) {
 	// TODO Auto-generated constructor stub
+	Name = n;
+	Race = r;
+	Health = 100;
+
+	Stats[0] = 3;//Strength
+	Stats[1] = 5;//Dexterity
+	Stats[2] = 8;//Intelligence
+	Stats[3] = 5;// Wisdom
+	Stats[4] = 5;//Charisma
+
+	for(int k = 0; k <= 19; k++)
+	{
+		Invintory[k] = new Items("Empty");
+	}
+
+	for(int k = 0; k <=19; k++)
+	{
+		WepInvintory[k] = new Weapon();
+	}
+
+	UnarmedAtck = UnarmedCalc();
 
 }
 
@@ -89,6 +112,10 @@ Item::Weapon* Player::retWeapon() {
 		}
 	}
 	return wep;
+}
+
+std::string Player::retName() {
+	return Name;
 }
 
 Player::~Player() {
