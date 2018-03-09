@@ -20,9 +20,16 @@ Enemy::Enemy(){
 
 	UnarmedAtck = UnarmedCalc();
 
+	//Invintory = new Items[20];
+
 	for(int k = 0; k <= 19; k++)
 	{
-		Invintory[k] = "Empty";
+		Invintory[k] = new Items("Empty");
+	}
+
+	for(int k = 0; k <=19; k++)
+	{
+		WepInvintory[k] = new Weapon();
 	}
 
 }
@@ -39,9 +46,17 @@ Enemy::Enemy(double h,int s[],std::string r) {
 
 	UnarmedAtck = UnarmedCalc();
 
+	//Invintory = new Items[20];
+
+
 	for(int k = 0; k <= 19; k++)
 	{
-		Invintory[0] = "Empty";
+		Invintory[k] = new Items("Empty");
+	}
+
+	for(int k = 0; k <=19; k++)
+	{
+		WepInvintory[k] = new Weapon();
 	}
 }
 
@@ -88,20 +103,41 @@ int Enemy::retStat(int s) {
 	return Stats[s];
 }
 
-void Enemy::addItem(std::string item) {
+void Enemy::addItem(Item::Items item) {
 	int k = 0;
-	while(Invintory[k] != "Empty")
+	while(Invintory[k]->retType() != "Empty")
 	{
 		k++;
 	}
-	if(Invintory[k] == "Empty")
+	if(Invintory[k]->retType() == "Empty")
 	{
-		Invintory[k] = item;
+		Invintory[k] = &item;
 	}
 }
 
-std::string Combat::Enemy::retItem(int a) {
-	return Invintory[a];
+Item::Weapon* Combat::Enemy::retWeapon() {
+	Item::Weapon* wep;
+	for(int k = 0;k <= 19;k++)
+	{
+		if(WepInvintory[k]->retType() == "Sword")
+		{
+			wep = WepInvintory[k];
+			k = 20;
+		}
+	}
+	return wep;
+}
+
+void Enemy::addWeapon(Item::Weapon weapon) {
+	int k = 0;
+	while(WepInvintory[k]->retType() != "Empty")
+	{
+		k++;
+	}
+	if(WepInvintory[k]->retType() == "Empty")
+	{
+		WepInvintory[k] = &weapon;
+	}
 }
 
 Enemy::~Enemy() {

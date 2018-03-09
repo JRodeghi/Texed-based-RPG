@@ -9,22 +9,26 @@
 #define COMBAT_WEAPONS_WEAPON_H_
 
 #include <iostream>
+#include "../../Items.h"
 
-namespace Combat {
+namespace Item {
 
-class Weapon {
+class Weapon : public Items{
 private:
-	std::string type;
+	//std::string type;
 	std::string magicDamageType;
 	bool isMagic;
 	double dmg;
 	double magicDmg;
 	int health;
+
+	std::string* WeaponList;
 public:
+	Weapon();
 	Weapon(std::string,double,double,std::string,bool);
 	double Attack();
 	void retStats();
-	std::string retType();
+	std::string* retWeps();
 	virtual ~Weapon();
 
 };

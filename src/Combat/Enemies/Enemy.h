@@ -8,6 +8,9 @@
 #ifndef COMBAT_ENEMIES_ENEMY_H_
 #define COMBAT_ENEMIES_ENEMY_H_
 #include <iostream>
+#include "../../Items.h"
+#include "../Weapons/Weapon.h"
+using namespace Item;
 
 namespace Combat {
 
@@ -16,7 +19,9 @@ private:
 	std::string Race;
 	double Health;
 	int Stats[5];
-	std::string Invintory[20];
+	Item::Items* Invintory[20];
+	Item::Weapon* WepInvintory[5];
+	//const int InvintorySize = 20;
 	double UnarmedAtck;
 
 	double UnarmedCalc();
@@ -27,8 +32,9 @@ public:
 	void retStats();
 	double retHealth();
 	int retStat(int);
-	void addItem(std::string);
-	std::string retItem(int);
+	void addItem(Item::Items);
+	void addWeapon(Item::Weapon);
+	Item::Weapon* retWeapon();
 	virtual ~Enemy();
 };
 

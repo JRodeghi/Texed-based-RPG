@@ -10,6 +10,7 @@
 
 #include "Enemy.h"
 #include "../Weapons/Weapon.h"
+#include "../Weapons/Sword.h"
 #include <iostream>
 
 namespace Combat {
@@ -17,6 +18,8 @@ namespace Combat {
 class Bandit: public Enemy {
 private:
 	int Stats[5];
+	std::string* weapons;
+	Item::Weapon weps;
 public:
 	Bandit(double,std::string);
 	double Attack();
