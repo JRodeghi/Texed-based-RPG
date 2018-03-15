@@ -11,7 +11,7 @@ using namespace Item;
 
 namespace Player {
 
-Player::Player(std::string n,std::string r) {
+Player::Player(std::string n,std::string r,bool gen) {
 	// TODO Auto-generated constructor stub
 	Name = n;
 	Race = r;
@@ -34,6 +34,8 @@ Player::Player(std::string n,std::string r) {
 	}
 
 	UnarmedAtck = UnarmedCalc();
+
+	isMale = gen;
 
 }
 
@@ -60,7 +62,9 @@ double Player::UnarmedCalc() {
 }
 
 void Player::retStats() {
-	std::cout<<"health: " << Health << std::endl;
+	std::cout<<"Name: " << Name << std::endl;
+	std::cout<<"Race: " << Race << std::endl;
+	std::cout<<"Health: " << Health << std::endl;
 	std::cout<<"Strength: " << Stats[0] << std::endl;
 	std::cout<<"Dexterity: " << Stats[1] << std::endl;
 	std::cout<<"Intelligence: " << Stats[2] << std::endl;
@@ -116,6 +120,10 @@ Item::Weapon* Player::retWeapon() {
 
 std::string Player::retName() {
 	return Name;
+}
+
+bool Player::retGen() {
+	return isMale;
 }
 
 Player::~Player() {

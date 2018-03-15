@@ -11,6 +11,7 @@ RM := rm -rf
 -include src/Combat/Weapons/subdir.mk
 -include src/Combat/Enemies/subdir.mk
 -include src/Combat/subdir.mk
+-include src/Chapter1/subdir.mk
 -include src/subdir.mk
 -include subdir.mk
 -include objects.mk

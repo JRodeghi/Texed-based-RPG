@@ -23,10 +23,13 @@ private:
 	Item::Weapon* WepInvintory[5];
 	double UnarmedAtck;
 
+	bool isMale;
+
 	double UnarmedCalc();
 public:
-	Player(std::string,std::string);
+	Player(std::string,std::string,bool);
 	std::string retName();
+	bool retGen();
 	void retStats();
 	double retHealth();
 	int retStat(int);
